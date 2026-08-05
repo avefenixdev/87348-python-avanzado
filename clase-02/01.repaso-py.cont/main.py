@@ -102,7 +102,15 @@ max()
 # * Nota máxima
 # * promedio
 
+## Ejercicio 3: Longitud de una palabra
 
+# 1. Pedir una palabra
+# 2. La cantidad de caracteres
 
+## Ejercicio 4: Conversor de edad
+# Pedir la edad de una persona y mostrar su dentro de 10 años.
+
+## Ejercicio 5: Numeros del 1 al 10
+# Mostrar los números del 1 al 10 utilizando una función integrada
 
 
