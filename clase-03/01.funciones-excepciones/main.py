@@ -166,12 +166,152 @@ print(resultado)
 
 numeros = [1, 2, 3, 4, 5]
 
-dobles = map(lambda num: num * 2, numeros)
+dobles = map(lambda num: num * 2, numeros) # devuelve una lista de la misma cantidad de elementos de la original
 
 print(list(dobles))
 
 # filter
 
-pares = filter(lambda numero: numero % 2 == 0, numeros)
+pares = filter(lambda numero: numero % 2 == 0, numeros) # devuelve una lista de solo los elementos que coincinda con lo que se haya decidido en el callback
 
 print(list(pares))
+
+print("# ! Excepciones")
+# Un programa puede encontrarse con situaciones inesperadas
+
+# * El usuario introduce texto cuando esperamos un número
+# * Un archivo no existe
+# * Intentamos dividir por cero.
+# * Accedemos a una posición inexistente.
+# * Una clave no existe en un diccionario.
+
+print('Inicio del programa')
+numero = 10
+divisor = 0 # ZeroDivisionError
+
+# resultado = numero / divisor
+
+try:
+    resultado = numero / divisor
+except ZeroDivisionError:
+    print("No se puede dividir por cero")
+
+print('Fin del programa')
+
+# Casteo inválido
+
+try:
+    edad = int(input("Ingrese su edad: "))
+    print(edad)
+except ValueError:
+    print('Debe ingresar un número')
+    
+# Varias excepciones
+
+try: 
+    numero = int(input("Número: "))
+    resultado = 100 / numero
+    
+    print(f"{resultado:.2f}")
+except ValueError:
+    print("Debe ingresar un número")
+    
+except ZeroDivisionError:
+    print("El número no puede ser cero")
+    
+# Desafío integrador
+# Gestión de productos
+
+# La idea es crear un pequeño programa que permita:
+
+# * Agregar un producto.
+# * Guardarlos en una lista de diccionario
+# * Mostrar productos
+# * Calcular precios con lambda
+# * Manejar error con try/except
+# * usar funciones.
+# * Practicar *args y **kwargs
+""" 
+El programa va a tener un menú 
+
+1. Agregar producto
+2. Mostrar productos
+3. Buscar producto (no es obligatorio -> punto extra)
+4. Calcular precio con descuento (no es obligatorio -> punto extra)
+5. Salir
+
+"""
+
+# Programa principal
+
+# menu()
+# agregar_producto(**producto)
+# mostrar_productos()
+# descuento_aplicado = calcular_precio_final(precio, descuento)
+# buscar_producto(nombre) -> Muestra en terminal el producto encontrado o no se encontró el producto
+# cargar_producto() -> input(Nombre), input(Precio), input(Stock)
+
+def cargar_producto():
+    print("cargar_producto")
+
+def mostrar_productos():
+    print("mostrar_productos")
+    
+def buscar_producto(nombre):
+    print("buscar_producto")
+    
+def calcular_precio_final(precio, descuento):
+    print("calcular_precio_final")
+    return 0
+
+
+def menu():
+    
+   while True: 
+        print("""
+           --- MENÚ ---
+           
+           1. Agregar producto
+           2. Mostrar productos
+           3. Buscar producto 
+           4. Calcular precio con descuento
+           5. Salir
+           
+                 
+           """)
+           
+        try:
+            opcion = int(input("Selecione una opción: "))
+                    
+            match opcion:
+                case 1:
+                    cargar_producto()
+                case 2: 
+                    mostrar_productos()
+                case 3:
+                    nombre = input("Nombre a buscar: ")
+                    buscar_producto(nombre) 
+                case 4:
+                    # si el usuario me ingresa una cadena
+                    try: 
+                        precio = float(input("Precio: "))
+                        descuento = float(input("Descuento (%): "))
+                        
+                        precio_final = calcular_precio_final(
+                            precio,
+                            descuento
+                        )
+                        
+                        print(f"Precio final: ${precio_final:.2f}")
+                    except ValueError:
+                        print("Debes ingresar valores númericos")
+                case 5:
+                    print("Programa finalizado.")
+                    break
+                    
+                case _:
+                    print("Opción incorrecta.")
+        except ValueError:
+            print("Debes ingresar un número")
+    
+menu()
