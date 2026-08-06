@@ -35,8 +35,46 @@ print(sumar(7, 2, 3, 4, 5, 6, 7, 10)) # 8
 
 # 5 minutos para crear una función que recibe una cantidad de argumentos variables y calcular el promedio.
 
+# ----> *args -> argumentos posicionales -> 
+# ----> **kwargs -> keyword -> argumentos nombrados -> dic
 
+def mostrar_usuarios(**datos):
+    print(datos) # <---- dic -> kwargs recibe los argumentos como diccionarios
+    
 
+mostrar_usuarios(
+    nombre="Laura",
+    edad=25,
+    activo=True
+)
+
+# Ejemplo *args + **kwargs
+
+def registrar_evento(*usuarios, **datos):
+    print("Usuarios -> ", usuarios) # <---- tupla
+    print("Datos -> ", datos) # <---- dic
+
+registrar_evento(
+    "Lorena",
+    "Ana",
+    "Silvina",
+    fecha="2026-08-06",
+    lugar="Buenos Aires"
+)
+
+# Desafío integrador
+# El programa debe pedir lo siguiente:
+""" 
+1. Pedir el nombre.
+2. Pedir edad.
+3. Pedir ciudad.
+4. Pedir profesión.
+5. Crear el perfil usando **kwargs
+6. Pedir 3 notas
+7. Calcular el promedio utilizando *args
+8. Mostrar todos los datos """
+
+# 8 minutos -> para realizar este ejercicio
 
 
 
