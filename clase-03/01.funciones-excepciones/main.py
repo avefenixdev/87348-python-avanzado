@@ -76,5 +76,102 @@ registrar_evento(
 
 # 8 minutos -> para realizar este ejercicio
 
+""" def crear_perfil(**perfil):
+    print("\nPerfil creado:")
+    for clave, valor in perfil.items(): # py despaquetar -> destructurando en js
+        print(f"{clave}: {valor}")
+    
+def promedio(*notas):
+    return sum(notas) / len(notas)
+    
+# Crear perfil
+nombreInput = input('Ingrese nombre: ')
+edadInput = int(input('Ingrese la edad: '))
+ciudadInput = input('Ingrese la ciudad: ')
+profesionInput = input('Ingrese la profesión: ')
 
+crear_perfil(
+    nombre=nombreInput,
+    edad=edadInput,
+    ciudad=ciudadInput,
+    profesion=profesionInput
+)
 
+# Ingresar notas
+notas = []
+
+while True:
+    nota = float(input("Ingrese una nota: "))
+    notas.append(nota)
+    
+    # Bandera
+    continuar = input('¿Desea ingresar otra nota(s/n): ')
+    
+    if continuar.lower() != "s":
+        break
+    
+# Mostrar promedio
+print(f"\n El promedio es: {promedio(*notas):.2f}") """
+
+# ! ---------------------------------------------
+# ! ---------------------------------------------
+
+print("# ! Funciones anónimas -> sin usar def")
+
+# anatomía de una función lambda
+# lambda parametros: expresión
+
+doble = lambda numero: numero * 2
+
+print(doble(5)) # 10
+
+# Dos parámetros
+sumar = lambda a, b : a + b
+print(sumar(10, 20))
+
+# lambdas y cadenas
+
+obtener_logitud = lambda texto: len(texto)
+print(obtener_logitud("Python"))
+
+# Lambdas para ordenar
+
+personas = [
+    { "nombre": "Ana", "edad": 30 },
+    { "nombre": "Juan", "edad": 20 },
+    { "nombre": "Pedro", "edad": 25 }
+]
+
+personas.sort(key=lambda persona: persona["edad"])
+
+print(personas)
+
+# Funciones de orden superior ->> recibe otra funcion como argumneto o devuelve una función
+
+def aplicar(callback, numero):
+    return callback(numero)
+
+def doble(numero):
+    return numero * 2 
+
+def triple(numero):
+    return numero * 3
+
+resultado = aplicar(lambda n: n * 2, 10) # 20
+print(resultado)
+resultado = aplicar(triple, 10) # 30
+print(resultado)
+
+# map()
+
+numeros = [1, 2, 3, 4, 5]
+
+dobles = map(lambda num: num * 2, numeros)
+
+print(list(dobles))
+
+# filter
+
+pares = filter(lambda numero: numero % 2 == 0, numeros)
+
+print(list(pares))
