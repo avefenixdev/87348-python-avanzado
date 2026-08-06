@@ -44,3 +44,37 @@ resultado = resta(10, 4)
 print(resultado) # 6
 resultado = resta(16, 3) 
 print(resultado) # 13
+
+print('# funciones con parametros por defectos')
+
+def saludarVersionDos(nombre, mensaje="Hola"):
+    print(mensaje, nombre)
+
+saludarVersionDos("Luis")
+saludarVersionDos("Laura", "Holis")
+
+print("Funciones que combinan varias operaciones")
+
+def calcular_promedio(notas): 
+    total = sum(notas)
+    cantidad = len(notas)
+    
+    return total / cantidad
+# -----------------
+notas = [ 7, 10, 5, 9]
+
+promedio = calcular_promedio(notas)
+print(f"Promedio: {promedio}")
+
+# Contexto local y contexto global
+
+contador = 0
+
+def incrementar():
+    global contador # le indica al interprete de python modificar la variable global
+    contador += 1
+    
+incrementar()
+incrementar()
+
+print(contador)
