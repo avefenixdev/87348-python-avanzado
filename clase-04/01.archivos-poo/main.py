@@ -84,4 +84,15 @@ def agregar_contenido_al_archivo():
 # Segunda etapa -> leer el archivo y mostrar esos datos
 
 
+# ! ----------------------------------------------
+# ! Módulos y paquetes
+# ! ----------------------------------------------
+
+# Modulos
+# Un módulo es un archivo que puede contener una funcionalidad o varias.
+
+# Paquetes 
+# Los paquetes nos permite agrupar módulos
+
+
 
