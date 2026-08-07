@@ -40,3 +40,48 @@ def leer_archivo():
     print(contenido)
     
 leer_archivo()
+
+def escribir_varias_lineas():
+    with  open("alumnos.txt", "w") as archivo:
+        archivo.write("Laura\n")
+        archivo.write("Juan\n")
+        archivo.write("Pedro\n")
+        
+# escribir_varias_lineas()
+
+def leer_linea_a_linea():
+    with open("alumnos.txt", "r") as archivo:
+        
+        for linea in archivo:
+            print(linea.strip())
+
+# leer_linea_a_linea()
+
+def agregar_contenido_al_archivo(): 
+    with open("alumnos.txt", "a") as archivo:
+        archivo.write("Maria\n")
+        
+# agregar_contenido_al_archivo()
+
+# -----------------------------
+# Desafío con archivos
+# -----------------------------
+
+# Crear un programa que solicite una persona
+
+# - Nombre
+# - Edad
+# - Ciudad
+
+# > archivo -> persona.txt
+
+# El archivo debe contenedor lo siguiente:
+
+# Nombre: Romina
+# Edad: 25
+# Ciudad: Buenos Aires
+
+# Segunda etapa -> leer el archivo y mostrar esos datos
+
+
+
